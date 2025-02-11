@@ -30,6 +30,7 @@ use DeepCopy\Filter\SetNullFilter;
 use DeepCopy\Matcher\Doctrine\DoctrineProxyMatcher;
 use DeepCopy\Matcher\PropertyNameMatcher;
 use DeepCopy\Matcher\PropertyTypeMatcher;
+use DeepCopy\TypeFilter\ReplaceFilter;
 use DeepCopy\TypeFilter\ShallowCopyFilter;
 use DeepCopy\TypeMatcher\TypeMatcher;
 use PHPUnit\Framework\TestCase;
@@ -473,6 +474,21 @@ class DeepCopyTest extends TestCase
         $deepCopy->prependFilter(new SetNullFilter(), new PropertyNameMatcher('foo'));
         $copy = $deepCopy->copy($object);
         $this->assertNull($copy->getFoo());
+    }
+
+    public function test_it_can_prepend_type_filter()
+    {
+        $object = new f008\A('bar');
+        $deepCopy = new DeepCopy();
+        $deepCopy->addTypeFilter(new ReplaceFilter(function ($object) {
+            return new f008\A('baz');
+        }), new TypeMatcher(f008\A::class));
+        $deepCopy->prependTypeFilter(new ReplaceFilter(function ($object) {
+            return new f008\A('foo');
+        }), new TypeMatcher(f008\A::class));
+
+        $copy = $deepCopy->copy($object);
+        $this->assertEquals('foo',$copy->getFoo());
     }
 
     /**
