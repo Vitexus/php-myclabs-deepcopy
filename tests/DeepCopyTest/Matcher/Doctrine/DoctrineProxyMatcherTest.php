@@ -39,7 +39,7 @@ class FooProxy implements Proxy
     /**
      * @inheritdoc
      */
-    public function __load()
+    public function __load(): void
     {
         throw new BadMethodCallException();
     }
@@ -47,7 +47,7 @@ class FooProxy implements Proxy
     /**
      * @inheritdoc
      */
-    public function __isInitialized()
+    public function __isInitialized(): bool
     {
         throw new BadMethodCallException();
     }

@@ -2,6 +2,7 @@
 
 namespace DeepCopy\f013;
 
+use BadMethodCallException;
 use Doctrine\Persistence\Proxy;
 
 class A implements Proxy
@@ -11,14 +12,15 @@ class A implements Proxy
     /**
      * @inheritdoc
      */
-    public function __load()
+    public function __load(): void
     {
     }
 
     /**
      * @inheritdoc
      */
-    public function __isInitialized()
+    public function __isInitialized(): bool
     {
+        throw new BadMethodCallException();
     }
 }
