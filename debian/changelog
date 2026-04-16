@@ -1,0 +1,5 @@
+php-myclabs-deepcopy (1.13.4-1) unstable; urgency=low
+
+  * Initial Debian packaging
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 16 Apr 2026 00:00:00 +0200
