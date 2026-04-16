@@ -1,3 +1,10 @@
+php-myclabs-deepcopy (1.13.4-2) unstable; urgency=medium
+
+  * Convert to transitional package depending on php-deepcopy
+    (php-deepcopy already exists in Debian with the same files)
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 16 Apr 2026 00:00:00 +0200
+
 php-myclabs-deepcopy (1.13.4-1) unstable; urgency=low
 
   * Initial Debian packaging
