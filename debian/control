@@ -15,8 +15,9 @@ Architecture: all
 Multi-Arch: foreign
 Depends:
  ${misc:Depends},
- php-common
-Description: Create deep copies (clones) of PHP objects
- DeepCopy helps you create deep copies (clones) of your objects. It is
- particularly useful when you want to duplicate an object graph without
- sharing references between the original and the copy.
+ php-deepcopy
+Description: Transitional package for php-deepcopy
+ This is a transitional dummy package. The myclabs/deep-copy library
+ is provided by the php-deepcopy package in Debian.
+ .
+ This package can safely be removed once php-deepcopy is installed.
