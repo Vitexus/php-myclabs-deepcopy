@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/php-myclabs-deepcopy/usr/share/php/DeepCopy
+	cp -r src/DeepCopy/* debian/php-myclabs-deepcopy/usr/share/php/DeepCopy/
+
+override_dh_auto_test:

@@ -1,0 +1,22 @@
+Source: php-myclabs-deepcopy
+Section: php
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/myclabs/DeepCopy
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/Vitexus/php-myclabs-deepcopy.git
+Vcs-Browser: https://github.com/Vitexus/php-myclabs-deepcopy
+
+Package: php-myclabs-deepcopy
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ php-common
+Description: Create deep copies (clones) of PHP objects
+ DeepCopy helps you create deep copies (clones) of your objects. It is
+ particularly useful when you want to duplicate an object graph without
+ sharing references between the original and the copy.
